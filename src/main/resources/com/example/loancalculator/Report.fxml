@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.loancalculator.controllers.ReportController">
+    <HBox prefHeight="400.0" prefWidth="600.0">
+        <VBox prefHeight="400.0" prefWidth="300.0">
+            <padding>
+                <Insets right="10.0" />
+            </padding>
+            <TableView fx:id="TableView" prefHeight="177.0" prefWidth="300.0">
+                <columns>
+                    <TableColumn prefWidth="75.0" text="C1" />
+                    <TableColumn prefWidth="75.0" text="C2" />
+                </columns>
+                <VBox.margin>
+                    <Insets left="10.0" top="10.0" />
+                </VBox.margin>
+            </TableView>
+            <HBox prefHeight="179.0" prefWidth="300.0">
+                <VBox prefHeight="200.0" prefWidth="150.0">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </HBox.margin>
+                    <Label prefWidth="37.0" text="From:" />
+                    <HBox prefHeight="26.0" prefWidth="140.0">
+                        <children>
+                            <TextField fx:id="fromYear" promptText="Years">
+                                <HBox.margin>
+                                    <Insets right="7.0" />
+                                </HBox.margin>
+                            </TextField>
+                            <TextField fx:id="fromMonth" promptText="Months">
+                                <HBox.margin>
+                                    <Insets left="7.0" />
+                                </HBox.margin>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    <Label prefHeight="17.0" prefWidth="37.0" text="To:">
+                        <VBox.margin>
+                            <Insets top="20.0" />
+                        </VBox.margin>
+                    </Label>
+                    <HBox prefHeight="28.0" prefWidth="140.0">
+                        <TextField fx:id="toYear" promptText="Years">
+                            <HBox.margin>
+                                <Insets right="7.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <TextField fx:id="toMonth" promptText="Months">
+                            <HBox.margin>
+                                <Insets left="7.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </HBox>
+                    <Button fx:id="filterButton" mnemonicParsing="false" text="Filter">
+                        <VBox.margin>
+                            <Insets top="35.0" />
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="150.0">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                    <Label text="Delay:" />
+                    <HBox prefHeight="27.0" prefWidth="140.0">
+                        <TextField fx:id="delayYears" promptText="Years">
+                            <HBox.margin>
+                                <Insets right="7.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <TextField fx:id="delayMonths" promptText="Months">
+                            <HBox.margin>
+                                <Insets left="7.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </HBox>
+                    <Label text="Duration:">
+                        <VBox.margin>
+                            <Insets top="20.0" />
+                        </VBox.margin>
+                    </Label>
+                    <HBox prefHeight="27.0" prefWidth="140.0">
+                        <TextField fx:id="durationYears" promptText="Years">
+                            <HBox.margin>
+                                <Insets right="7.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <TextField fx:id="durationMonths" promptText="Months">
+                            <HBox.margin>
+                                <Insets left="7.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </HBox>
+                    <TextField fx:id="delayPercentage" promptText="Delay percentage">
+                        <VBox.margin>
+                            <Insets top="5.0" />
+                        </VBox.margin>
+                    </TextField>
+                    <Button fx:id="delayButton" mnemonicParsing="false" text="Delay">
+                        <VBox.margin>
+                            <Insets top="5.0" />
+                        </VBox.margin>
+                    </Button>
+                </VBox>
+            </HBox>
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="300.0">
+                <VBox.margin>
+                    <Insets left="10.0" top="10.0" />
+                </VBox.margin>
+                <Button fx:id="saveToFileButton" mnemonicParsing="false" text="Save to file">
+                    <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="newLoanButton" mnemonicParsing="false" text="New loan">
+                    <HBox.margin>
+                        <Insets left="20.0" top="5.0" />
+                    </HBox.margin>
+                </Button>
+            </HBox>
+        </VBox>
+        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
+            <AreaChart fx:id="chart" prefHeight="400.0" prefWidth="365.0">
+                <xAxis>
+                    <CategoryAxis fx:id="xAxis" side="BOTTOM" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="yAxis" side="LEFT" />
+                </yAxis>
+            </AreaChart>
+        </VBox>
+    </HBox>
+</AnchorPane>
