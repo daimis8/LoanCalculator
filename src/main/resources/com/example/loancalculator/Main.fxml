@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.loancalculator.controllers.LoanController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.loancalculator.controllers.LoanController">
    <VBox layoutX="-2.0" layoutY="-1.0" prefHeight="800.0" prefWidth="600.0">
       <HBox prefHeight="31.0" prefWidth="600.0" spacing="10.0">
          <Label alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="600.0" text="Loan calculator">
@@ -60,15 +53,6 @@
             </font>
          </Label>
          <ChoiceBox fx:id="graphChoice" prefHeight="30.0" prefWidth="150.0">
-            <items>
-               <FXCollections fx:factory="observableArrayList">
-                  <String fx:value="Annuity" />
-                  <String fx:value="Linear" />
-               </FXCollections>
-            </items>
-            <value>
-               <String fx:value="Annuity" />
-            </value>
          </ChoiceBox>
       </HBox>
       <HBox prefHeight="36.0" prefWidth="600.0">
@@ -80,7 +64,7 @@
                <Font size="18.0" />
             </font>
          </Label>
-         <TextField fx:id="insertPercentage" prefHeight="30.0" prefWidth="120.0" promptText="Insert percentage" />
+         <TextField fx:id="interestRate" prefHeight="30.0" prefWidth="120.0" promptText="Insert percentage" />
       </HBox>
       <HBox prefHeight="32.0" prefWidth="600.0">
          <VBox.margin>
@@ -107,6 +91,11 @@
             </font>
          </Label>
          <Label fx:id="monthsError" alignment="CENTER" prefHeight="30.0" prefWidth="300.0">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+         <Label fx:id="yearsAndMonthsError" alignment="CENTER" prefHeight="30.0" prefWidth="300.0">
             <font>
                <Font size="18.0" />
             </font>
