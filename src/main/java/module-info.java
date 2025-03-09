@@ -10,7 +10,9 @@ module com.example.loancalculator {
 
     opens com.example.loancalculator to javafx.fxml;
     opens com.example.loancalculator.controllers to javafx.fxml;
+    opens com.example.loancalculator.loans to javafx.base;
 
     exports com.example.loancalculator;
     exports com.example.loancalculator.controllers;
+    exports com.example.loancalculator.loans;
 }

@@ -11,7 +11,7 @@
             <padding>
                 <Insets right="10.0" />
             </padding>
-            <TableView fx:id="TableView" prefHeight="177.0" prefWidth="300.0">
+            <TableView fx:id="tableView" prefHeight="177.0" prefWidth="300.0">
                 <columns>
                     <TableColumn prefWidth="75.0" text="C1" />
                     <TableColumn prefWidth="75.0" text="C2" />
@@ -27,18 +27,16 @@
                     </HBox.margin>
                     <Label prefWidth="37.0" text="From:" />
                     <HBox prefHeight="26.0" prefWidth="140.0">
-                        <children>
-                            <TextField fx:id="fromYear" promptText="Years">
-                                <HBox.margin>
-                                    <Insets right="7.0" />
-                                </HBox.margin>
-                            </TextField>
-                            <TextField fx:id="fromMonth" promptText="Months">
-                                <HBox.margin>
-                                    <Insets left="7.0" />
-                                </HBox.margin>
-                            </TextField>
-                        </children>
+                        <TextField fx:id="fromYear" promptText="Years">
+                            <HBox.margin>
+                                <Insets right="7.0"/>
+                            </HBox.margin>
+                        </TextField>
+                        <TextField fx:id="fromMonth" promptText="Months">
+                            <HBox.margin>
+                                <Insets left="7.0"/>
+                            </HBox.margin>
+                        </TextField>
                     </HBox>
                     <Label prefHeight="17.0" prefWidth="37.0" text="To:">
                         <VBox.margin>
@@ -126,14 +124,34 @@
             </HBox>
         </VBox>
         <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0">
-            <AreaChart fx:id="chart" prefHeight="400.0" prefWidth="365.0">
+            <AreaChart fx:id="chart" prefHeight="302.0" prefWidth="500.0">
                 <xAxis>
-                    <CategoryAxis fx:id="xAxis" side="BOTTOM" />
+                    <CategoryAxis side="BOTTOM" fx:id="xAxis" />
                 </xAxis>
                 <yAxis>
                     <NumberAxis fx:id="yAxis" side="LEFT" />
                 </yAxis>
             </AreaChart>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+                <Label fx:id="fromYearsError" prefHeight="17.0" prefWidth="234.0" />
+                <Label fx:id="fromMonthsError" prefHeight="17.0" prefWidth="256.0" />
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+                <Label fx:id="toYearsError" prefHeight="17.0" prefWidth="234.0" />
+                <Label fx:id="toMonthsError" prefHeight="17.0" prefWidth="262.0" />
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+                <Label fx:id="delayYearsError" prefHeight="17.0" prefWidth="236.0" />
+                <Label fx:id="delayMonthsError" prefHeight="17.0" prefWidth="267.0" />
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+                <Label fx:id="durYearsError" prefHeight="17.0" prefWidth="236.0" />
+                <Label fx:id="durMonthsError" prefHeight="17.0" prefWidth="236.0" />
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+                <Label fx:id="delPercentage" prefHeight="17.0" prefWidth="236.0" />
+                <Label fx:id="saveToFileError" prefHeight="17.0" prefWidth="236.0" />
+            </HBox>
         </VBox>
     </HBox>
 </AnchorPane>

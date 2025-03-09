@@ -17,4 +17,20 @@ public abstract class Loan {
 
     public abstract List<LoanPayment> GetMonthlyPayments();
 
+    public double getLoanAmount() {
+        return loanAmount;
+    }
+
+    public int getYears() {
+        return years;
+    }
+
+    public int getMonths() {
+        return months;
+    }
+
+    public double getInterestRate() {
+        return interestRate;
+    }
+
 }

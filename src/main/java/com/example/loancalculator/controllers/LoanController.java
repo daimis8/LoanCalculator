@@ -128,8 +128,6 @@ public class LoanController {
 
         }
 
-
-
         Optional<Double> interestRate = Optional.empty();
         try {
             interestRateError.setText("");
@@ -147,39 +145,31 @@ public class LoanController {
             interestRateError.setText("Interest rate has to be a number.");
         }
 
-        if (loanAmount.isPresent() && years.isPresent() && months.isPresent() && interestRate.isPresent()) {
-            try {
-                Loan loan = switch (graphChoice.getValue()) {
-                    case "Annuity" -> new AnnuityLoan(loanAmount.get(), months.get(), years.get(), interestRate.get());
-                    case "Linear" -> new LinearLoan(loanAmount.get(), months.get(), years.get(), interestRate.get());
-                    default -> new AnnuityLoan(loanAmount.get(), months.get(), years.get(), interestRate.get());
-                };
+            if (loanAmount.isPresent() && years.isPresent() && months.isPresent() && interestRate.isPresent()) {
+                try {
+                    Loan loan = switch (graphChoice.getValue()) {
+                        case "Annuity" -> new AnnuityLoan(loanAmount.get(), years.get(), months.get(), interestRate.get());
+                        case "Linear" -> new LinearLoan(loanAmount.get(), years.get(), months.get(), interestRate.get());
+                        default -> new AnnuityLoan(loanAmount.get(), years.get(), months.get(), interestRate.get());
+                    };
 
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/loancalculator/Report.fxml"));
-                Parent reportRoot = fxmlLoader.load();
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/loancalculator/Report.fxml"));
+                    Parent reportRoot = fxmlLoader.load();
 
-                ReportController reportController = fxmlLoader.getController();
-                reportController.setLoan(loan);
+                    ReportController reportController = fxmlLoader.getController();
+                    reportController.setLoan(loan);
 
-                Scene reportScene = new Scene(reportRoot);
-
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-                stage.setScene(reportScene);
-                stage.setTitle("Loan Report");
-                stage.show();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Error Loading Report");
-                alert.setHeaderText(null);
-                alert.setContentText("Could not load the report view: " + e.getMessage());
-                alert.showAndWait();
+                    Scene reportScene = new Scene(reportRoot);
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.setScene(reportScene);
+                    stage.setTitle("Loan Report");
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
 
-    }
-
 }
+
+

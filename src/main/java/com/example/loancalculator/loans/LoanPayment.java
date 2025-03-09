@@ -6,15 +6,15 @@ public class LoanPayment {
     double monthlyPayment;
     double interest;
     double credit;
-    double loanBalance;
+    double balance;
 
-    public LoanPayment(int year, int month, double monthlyPayment, double interest, double credit, double loanBalance) {
+    public LoanPayment(int year, int month, double monthlyPayment, double interest, double credit, double balance) {
         this.year = year;
         this.month = month;
         this.monthlyPayment = monthlyPayment;
         this.interest = interest;
         this.credit = credit;
-        this.loanBalance = loanBalance;
+        this.balance = balance;
     }
 
     public LoanPayment(LoanPayment payment) {
@@ -23,11 +23,11 @@ public class LoanPayment {
         this.monthlyPayment = payment.monthlyPayment;
         this.interest = payment.interest;
         this.credit = payment.credit;
-        this.loanBalance = payment.loanBalance;
+        this.balance = payment.balance;
     }
 
     public double getLoanBalance() {
-        return Math.round(loanBalance * 100.0) / 100.0;
+        return Math.round(balance * 100.0) / 100.0;
     }
 
     public double getMonthlyPayment() {
@@ -71,6 +71,6 @@ public class LoanPayment {
     }
 
     public void setLoanBalance(double loanBalance) {
-        this.loanBalance = loanBalance;
+        this.balance = loanBalance;
     }
 }
